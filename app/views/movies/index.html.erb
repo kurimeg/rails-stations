@@ -1,0 +1,13 @@
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div class="card">
+      <img src="<%= movie.image_url %>" class="card__img-top" />
+      <div class="card__title">
+        <%= movie.name %>
+      </div>
+      <div class="button-container">       
+        <button>予約/詳細</button>
+      </div>
+    </div>
+  <% end %>
+</div>
