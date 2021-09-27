@@ -13,45 +13,11 @@
  *= require_tree .
  *= require_self
  */
- body{
-  background: rgba(195, 240, 249, 0.2);
- }
- .container{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+ html {
+  height: 100%;
 }
-.card {
-  margin: 32px;
 
-  width: 210.27px;
-  height: 256px;
-
-  background: #FFFFFF;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
-}
-.card__img-top {
-  width: 210.27px;
-  height: 143px;
-}
-.card__title{
-  margin: 20px;
-  color:#282828;
-  font-size: 14px;
-}
-.card__description{
-  color:#282828;
-  font-size: 12px;
-}
-button{
-  margin-left: 20px;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  outline: none;
-  padding: 6px 24px;
-  appearance: none;
-  color: #FFFFFF;
+body {
+  height: 100%;
+  margin: 0;
 }
