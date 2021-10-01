@@ -1,0 +1,23 @@
+<div class="contents__title">
+  Movies Create
+</div>
+<div>
+  <%= form_for(@movie, url: "/admin/movies", method: "POST") do |f| %>
+    <%= f.label :name, "映画タイトル" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :year, "公開年" %>
+    <%= f.text_field :year %>
+
+    <%= f.label :is_showing, "上映中" %>
+    <%= f.select :is_showing, @status %>
+
+    <%= f.label :description, "概要" %>
+    <%= f.text_area :description %>
+
+    <%= f.label :image_url, "画像URL" %>
+    <%= f.text_field :image_url %>
+
+    <%= f.submit "Save" %>
+  <% end %>
+</div>

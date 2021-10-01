@@ -1,56 +1,35 @@
-<header>
-  TechTrain Cinema.
-</header>
-<div class="container__table">
-  <div class="menu">
-    <div class="menu__title">
-      menu
-    </div>
-    <div class="menu__contents">
-      Movies
-    </div>
-    <div class="menu__contents">
-      Showtime
-    </div>
-    <div class="menu__contents">
-      Reservations
-    </div>
-  </div>
-  <div class="table">
-    <div class="table__title">
-      Movies
-    </div>
-    <table>
-      <tr>
-        <th width="20px">ID</th>
-        <th width="200px">タイトル</th>
-        <th width="60px">公開年  </th>
-        <th width="200px">概要</th>
-        <th width="200px">画像URL</th>
-        <th width="200px">上映中</th>
-        <th width="210px">登録日時</th>
-        <th width="210px">公開日時</th>
-      </tr>
-      <% @movies.each do |movie| %>
-        <tr>
-          <td align="center"><%= movie.id %></td>
-          <td><%= movie.name %></td>
-          <td align="center"><%= movie.year %>  </td>
-          <td><%= movie.description %></td>
-          <td align="center">
-            <img src="<%= movie.image_url %>" class="card__img-top" />
-          </td>
-          <td align="center">
-            <% if movie.is_showing then %>
-              上映中
-            <% else %>
-              上映予定
-            <% end %>
-          </td>
-          <td align="center"><%= l movie.created_at %></td>
-          <td align="center"><%= l movie.updated_at %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
+<div class="contents__title">
+  Movies
 </div>
+<table>
+  <tr>
+    <th width="20px">ID</th>
+    <th width="200px">タイトル</th>
+    <th width="60px">公開年  </th>
+    <th width="200px">概要</th>
+    <th width="200px">画像URL</th>
+    <th width="200px">上映中</th>
+    <th width="210px">登録日時</th>
+    <th width="210px">公開日時</th>
+  </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td align="center"><%= movie.id %></td>
+      <td><%= movie.name %></td>
+      <td align="center"><%= movie.year %>  </td>
+      <td><%= movie.description %></td>
+      <td align="center">
+        <img src="<%= movie.image_url %>" class="card__img-top" />
+      </td>
+      <td align="center">
+        <% if movie.is_showing then %>
+          上映中
+        <% else %>
+          上映予定
+        <% end %>
+      </td>
+      <td align="center"><%= l movie.created_at %></td>
+      <td align="center"><%= l movie.updated_at %></td>
+    </tr>
+  <% end %>
+</table>

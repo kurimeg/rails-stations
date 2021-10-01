@@ -4,8 +4,9 @@
 header{
   margin: 20px;
 }
-.container__table{
+.container__contents{
   display: flex;
+  min-height: 100%;
 }
 .menu{
   width: 175px;
@@ -28,17 +29,17 @@ header{
   font-weight: bold;
   border: 1px solid #000000;
 }
-.table{
+.contents__title{
+  font-weight: bold;
+  font-size: 24px;
+  margin: 20px;
+}
+.contents{
   background: #fff;
   border: 1px solid #000000;
 }
 table{
   margin: 10px;
-}
-.table__title{
-  font-weight: bold;
-  font-size: 24px;
-  margin: 20px;
 }
 table, th, td{
   border-collapse: collapse;
@@ -52,4 +53,8 @@ table th {
 table td {
   padding: 10px;
   vertical-align: top;
+ }
+ form{
+  width: 100%;
+  background: #E9ECEF;
  }
