@@ -1,29 +1,34 @@
 class Admin::MoviesController < ApplicationController
+  before_action :set_status, only: [:new, :create]
+
   def index
     @movies = Movie.all
   end
 
   def new
-    @status = [
-      ['上映中', true],
-      ['上映予定', false]
-    ]
     @movie = Movie.new
   end
 
   def create
     @movie = Movie.new(movie_params)
     if @movie.save 
-      flash[:success] = '映画を登録しました'
-        redirect_to 'admin/movies'
-      else
-        flash.now[:danger] = 'エラーが発生しました。'
-        render :new
-      end
+        flash[:success] = '映画を登録しました。'
+        redirect_to controller: :movies, action: :index
+    else
+      flash.now[:danger] = '映画の登録に失敗しました。'
+      render :new
+    end
   end
 
   private
     def movie_params
       params.require(:movie).permit(:name, :year, :is_showing, :description, :image_url)
+    end
+
+    def set_status
+      @status = [
+        ['上映中', true],
+        ['上映予定', false]
+      ]
     end
 end

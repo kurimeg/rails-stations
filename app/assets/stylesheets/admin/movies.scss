@@ -37,6 +37,8 @@ header{
 .contents{
   background: #fff;
   border: 1px solid #000000;
+  width: 100%;
+  min-height: 100%;
 }
 table{
   margin: 10px;
@@ -54,7 +56,59 @@ table td {
   padding: 10px;
   vertical-align: top;
  }
+ .container__form{
+  display: flex;
+  min-width: 100%;
+}
  form{
-  width: 100%;
+  display: flex;
   background: #E9ECEF;
+  min-width: 100%;
+ }
+//  label{
+//   width: 183px;
+//   height: 56px; 
+//   border: 1px solid #000000;
+//  }
+label {
+  display: inline-block;
+  width: 183px;
+  height: 24px; 
+  padding: 20px 0 20px 20px;
+  margin: 10px;
+  border: 1px solid #000000;
+}
+input:not([type='submit']), select {
+  width: 960px;
+  height: 56px;
+  margin: 10px;
+  border: 1px solid #000000;
+}
+select {
+  width: 966px;
+  height: 56px;
+  margin: 10px;
+  border: 1px solid #000000;
+}
+textarea {
+  width: 960px;
+  height: calc( 1.8em * 2 );
+  line-height: 1.8;
+  margin: 10px;
+  border: 1px solid #000000;
+  vertical-align: middle;
+}
+input[type='submit']{
+  margin-left: 1130px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  padding: 6px 24px;
+  appearance: none;
+  color: #FFFFFF;
+}
+ .message{
+  margin: 20px;
  }
