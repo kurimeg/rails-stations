@@ -1,5 +1,5 @@
 class Admin::MoviesController < ApplicationController
-  before_action :set_status, only: [:new, :create]
+  before_action :set_status, only: [:new, :create, :edit]
 
   def index
     @movies = Movie.all
@@ -17,6 +17,21 @@ class Admin::MoviesController < ApplicationController
     else
       flash.now[:danger] = '映画の登録に失敗しました。'
       render :new
+    end
+  end
+
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+      flash[:success] = '映画を更新しました。'
+      redirect_to controller: :movies, action: :index
+    else
+      flash.now[:danger] = '映画の更新に失敗しました。'
+      render :edit
     end
   end
 
