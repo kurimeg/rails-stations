@@ -1,5 +1,5 @@
 class Admin::MoviesController < ApplicationController
-  before_action :set_status, only: [:new, :create, :edit]
+  before_action :set_status, only: [:new, :create, :edit, :update]
 
   def index
     @movies = Movie.all
